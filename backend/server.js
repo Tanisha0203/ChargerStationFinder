@@ -9,8 +9,11 @@ const chargerRoutes = require('./routes/chargers');
 
 const app = express();
 
-// Middleware
-app.use(cors());
+
+app.use(cors({
+  origin: ['https://charger-station-finder.vercel.app', 'http://localhost:8080'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Swagger Documentation
