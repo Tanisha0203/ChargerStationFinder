@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 
-const API_URL = 'https://chargerstationfinder.onrender.com/'
+const API_URL = 'https://chargerstationfinder.onrender.com'
 
 export default createStore({
   state: {
