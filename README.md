@@ -75,7 +75,7 @@ npm run serve
 
 The application will be available at:
 - Frontend: http://localhost:8080
-- Backend API: http://localhost:5000
+- Backend API: https://chargerstationfinder.onrender.com/
 
 ## Deployment Information
 
@@ -83,7 +83,7 @@ The application will be available at:
 The frontend application is deployed at: http://localhost:8080
 
 ### Backend API
-The backend API is deployed at: http://localhost:5000
+The backend API is deployed at:https://chargerstationfinder.onrender.com/
 
 ### API Documentation
 - Swagger UI: http://localhost:5000/api-docs
@@ -92,7 +92,7 @@ The backend API is deployed at: http://localhost:5000
 To use the Postman collection:
 1. Import the collection file into Postman
 2. Set up environment variables:
-   - `base_url`: http://localhost:5000
+   - `base_url`: https://chargerstationfinder.onrender.com/
    - `token`: Your JWT token (obtained after login)
 
 ## API Endpoints
