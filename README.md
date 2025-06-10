@@ -77,6 +77,24 @@ The application will be available at:
 - Frontend: http://localhost:8080
 - Backend API: http://localhost:5000
 
+## Deployment Information
+
+### Frontend Application
+The frontend application is deployed at: http://localhost:8080
+
+### Backend API
+The backend API is deployed at: http://localhost:5000
+
+### API Documentation
+- Swagger UI: http://localhost:5000/api-docs
+- Postman Collection: [backend/Charging_Station_API.postman_collection.json](backend/Charging_Station_API.postman_collection.json)
+
+To use the Postman collection:
+1. Import the collection file into Postman
+2. Set up environment variables:
+   - `base_url`: http://localhost:5000
+   - `token`: Your JWT token (obtained after login)
+
 ## API Endpoints
 
 ### Authentication

@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "your-postman-id",
+		"name": "Charging Station API",
+		"description": "API collection for the Charging Station Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/register",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "register"]
+						}
+					}
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "login"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Charging Stations",
+			"item": [
+				{
+					"name": "Get All Chargers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/chargers",
+							"host": ["{{base_url}}"],
+							"path": ["api", "chargers"]
+						}
+					}
+				},
+				{
+					"name": "Create Charger",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Station 1\",\n    \"location\": {\n        \"latitude\": 51.5074,\n        \"longitude\": -0.1278\n    },\n    \"powerOutput\": 50,\n    \"connectorType\": \"Type 2\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/chargers",
+							"host": ["{{base_url}}"],
+							"path": ["api", "chargers"]
+						}
+					}
+				},
+				{
+					"name": "Update Charger",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Station\",\n    \"status\": \"Active\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/chargers/:id",
+							"host": ["{{base_url}}"],
+							"path": ["api", "chargers", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "charger_id_here"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Charger",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/chargers/:id",
+							"host": ["{{base_url}}"],
+							"path": ["api", "chargers", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "charger_id_here"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000"
+		},
+		{
+			"key": "token",
+			"value": "your_jwt_token_here"
+		}
+	]
+} 
